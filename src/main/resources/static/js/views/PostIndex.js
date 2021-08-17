@@ -34,6 +34,8 @@ export default function PostIndex(props) {
 export function postEvents() {
     createPostEvent()
     editPostEvent()
+    deletePostEvent()
+    submitEditEvent()
 }
 
 function createPostEvent() {
@@ -44,7 +46,7 @@ function createPostEvent() {
         }
 
         let request = {
-            method: 'Post',
+            method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(post)
         }
@@ -81,5 +83,15 @@ function submitEditEvent(){
 }
 
 function deletePostEvent(){
-    $('.post-delte-btn')
+    $('.post-delete-btn').click(function (){
+        let request = {
+            method: 'DELETE',
+            header: {'Content-Type': 'application/json'},
+        }
+        let id = $(this).attr("data-id")
+        fetch(`http://localhost:8080/api/posts/${id}`, request).then(response => {
+            console.log(response.status)
+            createView("/posts")
+        })
+    })
 }

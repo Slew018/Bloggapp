@@ -1,6 +1,7 @@
-package com.codeup.blogapp;
+package com.codeup.blogapp.web;
 
 
+import com.codeup.blogapp.data.Post;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
