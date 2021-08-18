@@ -22,9 +22,10 @@ export default function PostIndex(props) {
         </form>
             <div>
                 ${props.posts.map(post => `<h3 class="post-title">${post.title}</h3>
-                        <h2 class="post-content">${post.content}</h2>`).join('')}   
                 <button type="button"  class="post-edit-btn" data-id="${post.id}">Edit</button>
                 <button type="button" class="post-delete-btn data-id="${post.id}">Delete</button>"
+                <p>posted by: ${post.user.username}</p>
+                        <h2 class="post-content">${post.content}</h2>`).join('')}
             </div>
         </main>
     `;
