@@ -1,8 +1,23 @@
 package com.codeup.blogapp.data;
 
+import java.util.Collection;
+
 public class Post {
     private Long id;
     private User user;
+    private Collection<Category> categories;
+
+    public Collection<Category> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(Collection<Category> categories) {
+        this.categories = categories;
+    }
+
+    public Post(Collection<Category> categories) {
+        this.categories = categories;
+    }
 
     public Post(Long id, String title, String content, User user) {
         this.id = id;
