@@ -1,9 +1,16 @@
 package com.codeup.blogapp.data;
 
+import javax.persistence.*;
 import java.util.Collection;
 import java.util.Date;
 
+@Entity
+@Table(name="user")
+
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private long id;
     private String username;
     private String email;

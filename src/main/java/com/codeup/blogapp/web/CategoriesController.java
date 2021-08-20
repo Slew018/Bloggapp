@@ -15,10 +15,17 @@ import java.util.List;
 @RequestMapping(value = "api/categories", headers = "Accept=application/json")
 public class CategoriesController {
 
+    List<Category> categories = new ArrayList<>(){
+        {
+            add(new Category(1L, "a new Post"));
+            add(new Category(2L, "a newer Post"));
+            add(new Category(3L, "a newest Post"));
+        }};
+
     Collection<Post> userPosts = new ArrayList<>(){{
-        add(new Post(1L, "Post1", "a post", null));
-        add(new Post(2L, "Post2", "a post", null));
-        add(new Post(3L, "Post3", "a post", null));
+        add(new Post(1L, "Post1", "a post", null, categories));
+        add(new Post(2L, "Post2", "a post", null, categories));
+        add(new Post(3L, "Post3", "a post", null, categories));
     }};
 
         @GetMapping
