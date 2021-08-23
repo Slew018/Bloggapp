@@ -1,5 +1,7 @@
 package com.codeup.blogapp.data;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import java.util.Collection;
@@ -7,7 +9,6 @@ import java.util.Date;
 
 @Entity
 @Table(name = "user")
-
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,13 +24,14 @@ public class User {
     @Column(nullable = false, length = 60)
     private String password;
 
-    private Date createdAt;
+//    private Date createdAt;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Role role = Role.USER;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "posts")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "id")
+    @JsonBackReference
     private Collection<Post> posts;
 
     public enum Role {USER, ADMIN}
@@ -48,8 +50,7 @@ public class User {
         this.username = username;
     }
 
-    public User() {
-    }
+    public User() {}
 
     public Collection<Post> getPosts() {
         return posts;
