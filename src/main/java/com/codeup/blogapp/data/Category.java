@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
-@Table(name="categories")
+@Table(name = "categories")
 public class Category {
 
     @Id
@@ -20,7 +20,8 @@ public class Category {
     @JsonManagedReference
     private Collection<Post> posts;
 
-    public Category() {}
+    public Category() {
+    }
 
     public Collection<Post> getPosts() {
         return posts;

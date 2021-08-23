@@ -48,6 +48,4 @@ public class UsersController {
     @DeleteMapping("{id}")
     private void deleteUser(@PathVariable Long id){
     }
-
-
 }
