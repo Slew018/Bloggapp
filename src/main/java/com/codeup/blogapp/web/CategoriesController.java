@@ -18,32 +18,17 @@ public class CategoriesController {
 
     private final CategoryRepository categoryRepository;
 
-    public CategoriesController(CategoryRepository categoryRepository){
+    public CategoriesController(CategoryRepository categoryRepository) {
         this.categoryRepository = categoryRepository;
     }
 
-    List<Category> categories = new ArrayList<>(){
-        {
-            add(new Category(1L, "a new Post"));
-            add(new Category(2L, "a newer Post"));
-            add(new Category(3L, "a newest Post"));
-        }};
 
-    Collection<Post> userPosts = new ArrayList<>(){{
-        add(new Post(1L, "Post1", "a post", null, categories));
-        add(new Post(2L, "Post2", "a post", null, categories));
-        add(new Post(3L, "Post3", "a post", null, categories));
-    }};
+    @GetMapping
+    private List<Category> getCategories() {
 
-        @GetMapping
-    private Category getPostsByCategory(@RequestParam String categoryName){
+        return categoryRepository.findAll();
 
-            Category Categories = new Category(1L, "Tech");
-
-            Categories.setPosts(userPosts);
-
-            System.out.println(categoryName);
-            return Categories;
-        }
     }
+}
+
 

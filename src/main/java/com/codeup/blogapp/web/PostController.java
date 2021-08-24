@@ -33,7 +33,7 @@ public class PostController {
 
     @GetMapping({"id"})
     private Post getPostById(@PathVariable Long id) {
-        return postsRepository.getById(id);
+        return postsRepository.findById(id).get();
     }
 
     @PostMapping

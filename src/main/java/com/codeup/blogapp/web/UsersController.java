@@ -27,25 +27,18 @@ public class UsersController {
 
     @PostMapping
     private void createUser(@RequestBody User myUser) {
+    userRepository.save(myUser);
 
-        System.out.println(myUser.getId());
-        System.out.println(myUser.getUsername());
-        System.out.println(myUser.getEmail());
-        System.out.println(myUser.getPassword());
-        System.out.println(myUser.getRole());
     }
 
     @PutMapping("{id}")
     private void updateUser(@RequestBody User myUser, @PathVariable Long id) {
+    userRepository.save(myUser);
 
-        System.out.println(myUser.getId());
-        System.out.println(myUser.getUsername());
-        System.out.println(myUser.getEmail());
-        System.out.println(myUser.getPassword());
-        System.out.println(myUser.getRole());
     }
 
     @DeleteMapping("{id}")
     private void deleteUser(@PathVariable Long id){
+        userRepository.deleteById(id);
     }
 }
