@@ -23,7 +23,7 @@ public class Post {
     private String content;
 
     @ManyToOne
-    @JsonManagedReference
+    @JsonIgnoreProperties({"posts", "password"})
     private User user;
 
     @ManyToMany(fetch = FetchType.LAZY,
@@ -36,7 +36,6 @@ public class Post {
             foreignKey = @ForeignKey(ConstraintMode.CONSTRAINT),
             inverseForeignKey = @ForeignKey(ConstraintMode.CONSTRAINT)
     )
-    @JsonIgnoreProperties("posts")
     private Collection<Category> categories;
 
     public Collection<Category> getCategories() {

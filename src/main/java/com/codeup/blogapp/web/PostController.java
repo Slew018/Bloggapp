@@ -1,11 +1,11 @@
 package com.codeup.blogapp.web;
 
-
 import com.codeup.blogapp.PostsRepository;
 import com.codeup.blogapp.data.Category;
 import com.codeup.blogapp.data.Post;
 import com.codeup.blogapp.data.User;
 import org.springframework.web.bind.annotation.*;
+import services.EmailService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,16 +15,12 @@ import java.util.List;
 public class PostController {
 
     private final PostsRepository postsRepository;
+    private final EmailService emailService;
 
-    public PostController(PostsRepository postsRepository) {
+    public PostController(PostsRepository postsRepository, EmailService emailService) {
         this.postsRepository = postsRepository;
+        this.emailService = emailService;
     }
-
-//    List<Category> categories = new ArrayList<>() {{
-//        add(new Category(1L, "a new Post"));
-//        add(new Category(2L, "a newer Post"));
-//        add(new Category(3L, "a newest Post"));
-//    }};
 
     @GetMapping
     private List<Post> getPosts() {
