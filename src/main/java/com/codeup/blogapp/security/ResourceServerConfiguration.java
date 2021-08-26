@@ -1,4 +1,4 @@
-package security;
+package com.codeup.blogapp.security;
 
 import com.example.restblog.errors.CustomAccessDeniedHandler;
 import com.example.restblog.errors.CustomAuthenticationEntryPoint;
@@ -13,9 +13,9 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Res
 @EnableResourceServer
 public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter {
 
-    private final CustomAuthenticationEntryPoint customAuthenticationEntryPoint;
+    private final com.codeup.errorssample.errors.CustomAuthenticationEntryPoint customAuthenticationEntryPoint;
 
-    public ResourceServerConfiguration(CustomAuthenticationEntryPoint customAuthenticationEntryPoint) {
+    public ResourceServerConfiguration(com.codeup.errorssample.errors.CustomAuthenticationEntryPoint customAuthenticationEntryPoint) {
         this.customAuthenticationEntryPoint = customAuthenticationEntryPoint;
     }
 

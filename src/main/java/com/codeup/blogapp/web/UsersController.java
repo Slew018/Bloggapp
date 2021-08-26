@@ -1,13 +1,10 @@
 package com.codeup.blogapp.web;
 
 
-import com.codeup.blogapp.UserRepository;
-import com.codeup.blogapp.data.Category;
-import com.codeup.blogapp.data.Post;
-import com.codeup.blogapp.data.User;
+import com.codeup.blogapp.data.UserRepository;
+import com.codeup.blogapp.security.data.User;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController

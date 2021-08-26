@@ -1,7 +1,7 @@
-package security;
+package com.codeup.blogapp.security;
 
-import com.codeup.blogapp.UserRepository;
-import com.codeup.blogapp.data.User;
+import com.codeup.blogapp.data.UserRepository;
+import com.codeup.blogapp.security.data.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

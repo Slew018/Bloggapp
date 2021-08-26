@@ -1,6 +1,4 @@
-package com.codeup.blogapp.data;
-
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+package com.codeup.blogapp.security.data;
 
 import javax.persistence.*;
 import java.util.Collection;
