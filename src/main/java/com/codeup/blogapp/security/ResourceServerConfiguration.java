@@ -15,7 +15,7 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
 
     private final com.codeup.errorssample.errors.CustomAuthenticationEntryPoint customAuthenticationEntryPoint;
 
-    public ResourceServerConfiguration(com.codeup.errorssample.errors.CustomAuthenticationEntryPoint customAuthenticationEntryPoints) {
+    public ResourceServerConfiguration(com.codeup.errorssample.errors.CustomAuthenticationEntryPoint customAuthenticationEntryPoint) {
         this.customAuthenticationEntryPoint = customAuthenticationEntryPoint;
     }
 
